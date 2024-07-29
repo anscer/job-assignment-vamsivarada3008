@@ -1,6 +1,5 @@
 import express from 'express';
 import passport from 'passport';
-import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import stateRoutes from './routes/stateRoutes.js';
 import authRoutes from './routes/authRoutes.js';

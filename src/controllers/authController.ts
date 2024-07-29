@@ -43,7 +43,7 @@ export const registerUser = async (req: Request, res: Response) => {
 
   try {
     await client.connect();
-    
+
     // Check if user already exists
     const existingUser = await collection.findOne({ username });
     if (existingUser) {
@@ -53,7 +53,7 @@ export const registerUser = async (req: Request, res: Response) => {
 
     const user = { username, password: hashedPassword };
     const result = await collection.insertOne(user);
-    
+
     await client.close();
 
     const token = jwt.sign({ username: user.username }, secret, {

@@ -29,7 +29,7 @@ passport.use(
 );
 
 export const protect = (req: Request, res: Response, next: NextFunction) => {
-  passport.authenticate('jwt', { session: false }, (err:any, user:any, info:any) => {
+  passport.authenticate('jwt', { session: false }, (err: any, user: any, info: any) => {
     if (err) {
       return next(err);
     }
