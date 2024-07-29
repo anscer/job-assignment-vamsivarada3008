@@ -1,8 +1,9 @@
 import passport from 'passport';
 import { Strategy as JwtStrategy, ExtractJwt } from 'passport-jwt';
 import { Request, Response, NextFunction } from 'express';
-
-const secret = 'your_jwt_secret';
+import * as dotenv from 'dotenv';
+dotenv.config()
+const secret = process.env.JWT_SECRET!;
 
 const cookieExtractor = (req: Request) => {
   let token = null;

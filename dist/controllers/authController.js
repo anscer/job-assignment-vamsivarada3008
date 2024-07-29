@@ -16,7 +16,7 @@ const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri);
 const db = client.db('anscer_db');
 const collection = db.collection('user_management');
-const secret = 'your_jwt_secret';
+const secret = process.env.JWT_SECRET;
 /**
  * @swagger
  * /register:

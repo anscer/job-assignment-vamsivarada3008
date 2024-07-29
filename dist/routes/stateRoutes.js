@@ -9,5 +9,6 @@ router.route('/:id')
 router.route('/')
     .post(protect, createState)
     .get(protect, getStates);
-router.get('/aggregate/output', aggregateStates);
+router.route('/aggregate/output')
+    .get(protect, aggregateStates);
 export default router;
